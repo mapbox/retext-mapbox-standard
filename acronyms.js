@@ -9,6 +9,7 @@ module.exports = [
     'HTTP',
     'HTTPS',
     'TileJSON',
+    'OpenStreetMap',
     'UTFGrid',
     'CORS',
     'JSON',
