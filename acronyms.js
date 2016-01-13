@@ -2,6 +2,8 @@ module.exports = [
     'GeoJSON',
     'PNG',
     'SVG',
+    'JPEG',
+    'JPG',
     'MBTiles',
     'PDF',
     'API',
