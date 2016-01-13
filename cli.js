@@ -29,7 +29,7 @@ var findDown = require('vfile-find-down');
 var findUp = require('vfile-find-up');
 var format = require('vfile-reporter');
 var toFile = require('to-vfile');
-var mapboxStandard = require('./');
+var mapboxStandard = require('./standard');
 var equality = require('retext-equality');
 var pack = require('./package');
 
@@ -137,9 +137,7 @@ if (!cli.input.length && expextPipeIn) {
 
         file.contents = value;
 
-        retext().use(mapboxStandard).use(equality).process(doc, function (err, file) {
-            result = file.messages;
-        });
+        result = mapboxStandard(doc).messages;
 
         log(file);
     }, bail);
@@ -255,9 +253,7 @@ function processFactory(given) {
                 file.fail(err);
             }
 
-            retext().use(mapboxStandard).use(equality).process(file, function (err, file) {
-                log(file);
-            });
+            log(mapboxStandard(file));
         })
     }
 }

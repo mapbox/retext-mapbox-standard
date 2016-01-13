@@ -9,7 +9,7 @@
 
 var tap = require('tap');
 var retext = require('retext');
-var mapbox = require('./');
+var mapbox = require('./standard');
 
 /*
  * Helpers.
@@ -22,16 +22,7 @@ var mapbox = require('./');
  * @return {Array.<VFileMessage>} - Virtual messages.
  */
 function process(doc) {
-    var messages;
-
-    retext().use(mapbox).process(doc, function (err, file) {
-        if (err) {
-          throw err;
-        }
-        messages = file.messages;
-    });
-
-    return messages.map(String);
+    return mapbox(doc).messages.map(String);
 }
 
 /*
@@ -57,6 +48,12 @@ tap.test('retext-mapbox', function (t) {
         process('We work at MapBox'),
         ['1:12-1:18: Mapbox is styled Mapbox'],
         'OSM'
+    );
+
+    t.same(
+        process('This is `json`'),
+        [],
+        'avoid code'
     );
 
     t.same(
