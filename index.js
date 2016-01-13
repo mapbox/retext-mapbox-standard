@@ -1,6 +1,7 @@
 var nlcstToString = require('nlcst-to-string');
 var visit = require('unist-util-visit');
 var isLiteral = require('nlcst-is-literal');
+var brands = require('./brands');
 var forbidden = require('./forbidden');
 var acronyms = require('./acronyms');
 
@@ -12,6 +13,7 @@ function toSet(list) {
     return s;
 }
 
+var forbiddenSet = toSet(forbidden);
 var acronymsSet = toSet(acronyms);
 var acronymsLowercase = acronyms.reduce(function(set, a) {
     set[a.toLowerCase()] = a;
@@ -72,8 +74,11 @@ function factory(file) {
             var stringValue = toString(child)
             var value = toString(child).toLowerCase();
             var index = -1;
-            if (forbidden.hasOwnProperty(stringValue)) {
-              file.warn(forbidden[stringValue], child);
+            if (forbiddenSet.hasOwnProperty(value)) {
+              file.warn(value + ' is forbidden.', child);
+            }
+            if (brands.hasOwnProperty(stringValue)) {
+              file.warn(brands[stringValue], child);
             }
             if (acronymsLowercase.hasOwnProperty(value) &&
                !acronymsSet.hasOwnProperty(stringValue)) {

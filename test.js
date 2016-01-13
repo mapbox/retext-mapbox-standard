@@ -48,6 +48,12 @@ tap.test('retext-mapbox', function (t) {
     );
 
     t.same(
+        process('This is basically how to do it'),
+        ['1:9-1:18: basically is forbidden.'],
+        'forbidden'
+    );
+
+    t.same(
         process('We work at MapBox'),
         ['1:12-1:18: Mapbox is styled Mapbox'],
         'OSM'

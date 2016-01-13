@@ -1,4 +1,12 @@
-module.exports = {
-    OSM: 'OSM is jargon, use OpenStreetMap instead',
-    MapBox: 'Mapbox is styled Mapbox'
-};
+module.exports = [
+    'easy',
+    'easily',
+    'simply',
+    'simple',
+    'obviously',
+    'just',
+    'basically',
+    'procure',
+    'sexy',
+    'insane',
+    'clearly'];
