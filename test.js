@@ -51,6 +51,12 @@ tap.test('retext-mapbox', function (t) {
     );
 
     t.same(
+        process('Upload a TIF'),
+        ["1:10-1:13: Always write TIFF, not TIF"],
+        'TIFF not TIF'
+    );
+
+    t.same(
         process('This is `json`'),
         [],
         'avoid code'
