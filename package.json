@@ -22,6 +22,7 @@
   "dependencies": {
     "bail": "^1.0.0",
     "get-stdin": "^5.0.1",
+    "glob": "^6.0.4",
     "globby": "^4.0.0",
     "mdast-util-to-nlcst": "^2.0.1",
     "meow": "^3.7.0",
