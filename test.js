@@ -63,6 +63,12 @@ tap.test('retext-mapbox', function (t) {
     );
 
     t.same(
+        process('This is a length of text'),
+        [],
+        'no length bug'
+    );
+
+    t.same(
         process('This endpoint returns geoJSON'),
         ['1:23-1:30: geoJSON should be styled GeoJSON'],
         'OSM'

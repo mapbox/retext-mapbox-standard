@@ -18,7 +18,7 @@ var acronymsSet = toSet(acronyms);
 var acronymsLowercase = acronyms.reduce(function(set, a) {
     set[a.toLowerCase()] = a;
     return set;
-}, []);
+}, {});
 
 /**
  * Get a string value from a node.
