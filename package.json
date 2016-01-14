@@ -1,6 +1,6 @@
 {
   "name": "retext-mapbox-standard",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "enforce mapbox language rules",
   "main": "index.js",
   "scripts": {
