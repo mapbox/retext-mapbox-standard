@@ -87,5 +87,11 @@ tap.test('retext-mapbox', function (t) {
         'strip liquid tag'
     );
 
+    t.same(
+        stripLiquid('{% highlight json %}foo{% endhighlight %}\n{% highlight json %}foo{% endhighlight %}'),
+        '.........................................\n.........................................',
+        'strip liquid tag'
+    );
+
     t.end();
 });
