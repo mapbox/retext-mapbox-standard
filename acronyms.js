@@ -14,7 +14,7 @@ module.exports = [
     'OpenStreetMap',
     'UTFGrid',
     'CORS',
-    'JSON',
+    // 'JSON', disabled until liquid blocks are detected
     'S3',
     'AWS'
 ];

@@ -17,7 +17,6 @@
  * Dependencies.
  */
 
-var retext = require('retext');
 var fs = require('fs');
 var bail = require('bail');
 var meow = require('meow');
@@ -30,7 +29,6 @@ var findUp = require('vfile-find-up');
 var format = require('vfile-reporter');
 var toFile = require('to-vfile');
 var mapboxStandard = require('./standard');
-var equality = require('retext-equality');
 var pack = require('./package');
 
 /*

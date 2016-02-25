@@ -57,7 +57,7 @@ tap.test('retext-mapbox', function (t) {
     );
 
     t.same(
-        process('This is `json`'),
+        process('This is `json` and\n some `png`'),
         [],
         'avoid code'
     );

@@ -74,15 +74,22 @@ function factory(file) {
             var stringValue = toString(child)
             var value = toString(child).toLowerCase();
             var index = -1;
+            var msg;
             if (forbiddenSet.hasOwnProperty(value)) {
-              file.warn(value + ' is forbidden.', child);
+              msg = file.warn(value + ' is forbidden.', child);
+              msg.ruleId = value;
+              msg.source = 'mapbox';
             }
             if (brands.hasOwnProperty(stringValue)) {
-              file.warn(brands[stringValue], child);
+              msg = file.warn(brands[stringValue], child);
+              msg.ruleId = stringValue;
+              msg.source = 'mapbox';
             }
             if (acronymsLowercase.hasOwnProperty(value) &&
                !acronymsSet.hasOwnProperty(stringValue)) {
-              file.warn(stringValue + ' should be styled ' + acronymsLowercase[value], child);
+              msg = file.warn(stringValue + ' should be styled ' + acronymsLowercase[value], child);
+              msg.ruleId = stringValue;
+              msg.source = 'mapbox';
             }
         });
     };

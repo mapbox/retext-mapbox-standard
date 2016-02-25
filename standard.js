@@ -1,29 +1,40 @@
 var retext = require('retext');
+var simplify = require('retext-simplify');
+var remark2retext = require('remark-retext');
+var control = require('remark-message-control');
 var equality = require('retext-equality');
 var parser = require('retext-english');
-var bridge = require('mdast-util-to-nlcst');
-var mdast = require('remark');
+var remark = require('remark');
 var sort = require('vfile-sort');
 var mapboxStandard = require('./');
 
-var markdown = mdast();
+var simplifyConfig = {
+    ignore: [
+        'address', // geocoder
+        'request', // technical
+        'interface', // technical
+        'render' // technical
+    ]
+};
+
+var markdown = remark();
 var english = retext()
     .use(parser)
     .use(mapboxStandard)
-    .use(equality);
+    .use(equality)
+    .use(simplify, simplifyConfig);
 
 function standard(value) {
     var result;
-    /*
-     * All callbacks are in fact completely sync.
-     */
-    markdown.process(value, function (err, file) {
-        var tree;
-        tree = bridge(file, english.Parser);
-        english.run(tree, file);
-        sort(file);
-        result = file;
-    });
+    remark()
+        .use(remark2retext, english)
+        .use(control, {
+            'name': 'mapbox'
+        })
+        .process(value, function (err, file, doc) {
+            sort(file);
+            result = file;
+        });
     return result;
 }
 
