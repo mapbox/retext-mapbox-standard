@@ -4,7 +4,7 @@
   "description": "enforce mapbox language rules",
   "main": "index.js",
   "scripts": {
-    "test": "tap test.js"
+    "test": "tap test/test.js"
   },
   "bin": {
     "retext-mapbox-standard": "./cli.js"

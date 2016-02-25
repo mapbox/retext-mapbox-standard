@@ -9,7 +9,8 @@
 
 var tap = require('tap');
 var retext = require('retext');
-var mapbox = require('./standard');
+var mapbox = require('../lib/standard');
+var stripLiquid = require('../lib/strip_liquid');
 
 /*
  * Helpers.
@@ -72,6 +73,18 @@ tap.test('retext-mapbox', function (t) {
         process('This endpoint returns geoJSON'),
         ['1:23-1:30: geoJSON should be styled GeoJSON'],
         'OSM'
+    );
+
+    t.same(
+        process('{% highlight json %}OSM{% endhighlight %} other text'),
+        [],
+        'bad text in a liquid tag'
+    );
+
+    t.same(
+        stripLiquid('{% highlight json %}\nfoo\n{% endhighlight %} other text'),
+        '....................\n...\n.................. other text',
+        'strip liquid tag'
     );
 
     t.end();

@@ -28,7 +28,7 @@ var findDown = require('vfile-find-down');
 var findUp = require('vfile-find-up');
 var format = require('vfile-reporter');
 var toFile = require('to-vfile');
-var mapboxStandard = require('./standard');
+var mapboxStandard = require('./lib/standard');
 var pack = require('./package');
 
 /*

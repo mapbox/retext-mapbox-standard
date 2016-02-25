@@ -10,4 +10,10 @@ produce an error.
 }
 ```
 
+{% highlight json %}
+{
+  "token": "<token>"
+}
+{% endhighlight %}
+
 It's also wrong to use insensitive language like crazy.
