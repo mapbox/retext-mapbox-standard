@@ -13,7 +13,19 @@ var simplifyConfig = {
         'address', // geocoder
         'request', // technical
         'interface', // technical
-        'render' // technical
+        'render', // technical
+        'forward', // technical
+        'maximum', // technical
+        'minimum', // technical
+        'function', // technical
+        'option', // technical
+        'additional', // sales
+        'equivalent', // equal does not have identical connotation
+        'combined', // no good alternative
+        'provide', // i don't think this is really that complicated a word
+        'delete', // this is what the UI says
+        'it is', // no good alternative
+        'there are' // no good alternative
     ]
 };
 
