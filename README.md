@@ -1,6 +1,16 @@
 # retext-mapbox-standard
 
-Enforce Mapbox rules about language.
+[![Circle CI](https://circleci.com/gh/mapbox/retext-mapbox-standard.svg?style=svg)](https://circleci.com/gh/mapbox/retext-mapbox-standard)
+
+Enforce Mapbox rules about language: this is a testing tool that automatically
+runs on English-language content produced by the Mapbox team to guard against
+common grammar, sensitivity, and simplicity errors.
+
+## install
+
+    npm install -g retext-mapbox-standard
+
+## usage examples
 
 ```sh
 $ retext-mapbox-standard bad.md
