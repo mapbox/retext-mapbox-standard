@@ -33,7 +33,9 @@ For instance, in the list above where we needed to mention the word
 `geoJSON`, the list is preceded by the following comment so that it doesn't
 trigger a validation error in CI:
 
-    <!--mapbox ignore geojson OpenStreetMap-->
+```html
+<!--mapbox ignore geojson OpenStreetMap-->
+```
 
 ## Example
 
