@@ -9,4 +9,5 @@ module.exports = [
     'procure',
     'sexy',
     'insane',
-    'clearly'];
+    'clearly'
+];

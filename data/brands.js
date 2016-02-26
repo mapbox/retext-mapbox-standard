@@ -1,5 +1,7 @@
 module.exports = {
-    OSM: 'OSM is jargon, use OpenStreetMap instead',
-    TIF: 'Always write TIFF, not TIF',
-    MapBox: 'Mapbox is styled Mapbox'
+    OSM: { replace: ['OpenStreetMap'] },
+    'Open Street Map': { replace: ['OpenStreetMap'] },
+    'Open Street Maps': { replace: ['OpenStreetMap'] },
+    TIF: { replace: ['TIFF'] },
+    MapBox: { cased: true, replace: ['Mapbox'] }
 };

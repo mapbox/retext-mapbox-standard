@@ -34,26 +34,34 @@ tap.test('retext-mapbox', function (t) {
     var doc;
 
     t.same(
-        process('We used OSM'),
-        ['1:9-1:12: OSM is jargon, use OpenStreetMap instead'],
+        process('We used OSM, Open Street Map, and Open Street Maps'),
+        ['1:9-1:12: Replace “OSM” with “OpenStreetMap”',
+        '1:14-1:29: Replace “Open Street Map” with “OpenStreetMap”',
+        '1:35-1:51: Replace “Open Street Maps” with “OpenStreetMap”'],
         'OSM'
     );
 
     t.same(
         process('This is basically how to do it'),
-        ['1:9-1:18: basically is forbidden.'],
+        ['1:9-1:18: Remove “basically”'],
         'forbidden'
     );
 
     t.same(
         process('We work at MapBox'),
-        ['1:12-1:18: Mapbox is styled Mapbox'],
-        'OSM'
+        ['1:12-1:18: Replace “MapBox” with “Mapbox”'],
+        'Mapbox (wrong)'
+    );
+
+    t.same(
+        process('We work at Mapbox'),
+        [],
+        'Mapbox (correct)'
     );
 
     t.same(
         process('Upload a TIF'),
-        ["1:10-1:13: Always write TIFF, not TIF"],
+        ["1:10-1:13: Replace “TIF” with “TIFF”"],
         'TIFF not TIF'
     );
 
@@ -71,7 +79,7 @@ tap.test('retext-mapbox', function (t) {
 
     t.same(
         process('This endpoint returns geoJSON'),
-        ['1:23-1:30: geoJSON should be styled GeoJSON'],
+        ['1:23-1:30: Replace “geoJSON” with “GeoJSON”'],
         'OSM'
     );
 
