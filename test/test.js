@@ -84,6 +84,12 @@ tap.test('retext-mapbox', function (t) {
     );
 
     t.same(
+        process('\nThis endpoint returns geoJSON'),
+        ['2:23-2:30: Replace “geoJSON” with “GeoJSON”'],
+        'OSM'
+    );
+
+    t.same(
         process('{% highlight json %}OSM{% endhighlight %} other text'),
         [],
         'bad text in a liquid tag'
