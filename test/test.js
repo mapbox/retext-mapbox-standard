@@ -86,7 +86,13 @@ tap.test('retext-mapbox', function (t) {
     t.same(
         process('\nThis endpoint returns geoJSON'),
         ['2:23-2:30: Replace “geoJSON” with “GeoJSON”'],
-        'OSM'
+        'geoJSON'
+    );
+
+    t.same(
+        process('This endpoint returns `geojson`'),
+        [],
+        'geojson in code'
     );
 
     t.same(
