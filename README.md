@@ -58,3 +58,5 @@ _Implementation details for the interested, optional reading_
 This code is built on [wooorm/remark](https://github.com/wooorm/remark) the Markdown parser and [wooorm/retext](https://github.com/wooorm/retext) the natural language toolkit. These libraries avoid false-positives related to **code syntax**: we should never flag a spelling error in a URL, for instance. Since Mapbox's documentation also uses [Liquid templating](http://liquidmarkup.org/) tags, this tool also includes a step that removes them before validation.
 
 [retext-simplify](https://github.com/wooorm/retext-simplify) and [retext-equality](https://github.com/wooorm/retext-equality) (the core of [wooorm/alex](https://github.com/wooorm/alex)) are used unmodified but with a bunch of loosened restrictions. `lib/standard` adds Mapbox-specific rules about styling and casing brands and technical jargon.
+
+### [See Also & FAQ](https://github.com/mapbox/retext-mapbox-standard/wiki)
