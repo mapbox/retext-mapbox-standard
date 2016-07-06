@@ -1,20 +1,16 @@
 module.exports = [
-    'GeoJSON',
     'PNG',
     'SVG',
     'JPEG',
     'JPG',
-    'MBTiles',
     'PDF',
     'API',
-    'GL',
     'HTTP',
     'HTTPS',
-    'TileJSON',
-    'OpenStreetMap',
-    'UTFGrid',
-    'CORS',
     'JSON',
     'S3',
-    'AWS'
+    'AWS',
+    '18F',
+    'GSA',
+    'Agile BPA'
 ];

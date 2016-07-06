@@ -1,4 +1,6 @@
-# retext-mapbox-standard
+# retext-18F
+
+_Needs to be revised._
 
 [![Circle CI](https://circleci.com/gh/mapbox/retext-mapbox-standard.svg?style=svg)](https://circleci.com/gh/mapbox/retext-mapbox-standard)
 
