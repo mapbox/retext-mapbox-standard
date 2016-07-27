@@ -1,6 +1,6 @@
 {
   "name": "retext-mapbox-standard",
-  "version": "2.0.0",
+  "version": "2.0.0-beta1",
   "description": "enforce mapbox language rules",
   "main": "index.js",
   "scripts": {
@@ -17,29 +17,29 @@
   "author": "Tom MacWright",
   "license": "ISC",
   "devDependencies": {
-    "tap": "^5.0.1"
+    "tap": "^6.2.0"
   },
   "dependencies": {
     "bail": "^1.0.0",
     "get-stdin": "^5.0.1",
     "glob": "^7.0.0",
-    "globby": "^4.0.0",
+    "globby": "^6.0.0",
     "meow": "^3.7.0",
     "minimatch": "^3.0.0",
     "nlcst-search": "^1.1.1",
-    "nlcst-to-string": "^1.1.0",
+    "nlcst-to-string": "^2.0.0",
     "quotation": "^1.0.1",
-    "remark": "^4.0.0",
+    "remark": "^5.0.1",
     "remark-message-control": "^2.0.0",
-    "remark-retext": "^1.1.0",
-    "retext": "^2.0.0",
-    "retext-english": "^1.0.1",
+    "remark-retext": "^2.0.0",
+    "retext": "^3.0.0",
+    "retext-english": "^2.0.0",
     "retext-equality": "^2.2.1",
-    "retext-simplify": "^1.1.0",
+    "retext-simplify": "^2.0.0",
     "to-vfile": "^1.0.0",
     "vfile-find-down": "^1.0.0",
     "vfile-find-up": "^1.0.0",
-    "vfile-reporter": "^1.5.0",
+    "vfile-reporter": "^2.0.1",
     "vfile-sort": "^1.0.0"
   },
   "repository": {
