@@ -19,7 +19,7 @@ common grammar, sensitivity, and simplicity errors.
 
 Install globally:
 
-    npm install -g retext-mapbox-standard
+    npm install -g @mapbox/retext-mapbox-standard
 
 More typically, this will be included as a devDependency and invoked through
 the `test` script.
