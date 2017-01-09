@@ -60,6 +60,12 @@ tap.test('retext-mapbox', function (t) {
     );
 
     t.same(
+        process('The Mapbox GL Style Specification'),
+        ['1:5-1:20: Replace “Mapbox GL Style” with “Mapbox Style”'],
+        'No "GL" in Style Specification'
+    );
+
+    t.same(
         process('Upload a TIF'),
         ["1:10-1:13: Replace “TIF” with “TIFF”"],
         'TIFF not TIF'
